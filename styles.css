@@ -4165,6 +4165,20 @@ h6 {
         font-size: clamp(0.9rem, 4.5vw, 1.1rem);
     }
 
+    .floating-btn {
+        bottom: 3vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+        padding: 1.5vh 6vw;
+        font-size: clamp(0.85rem, 3.5vw, 1rem);
+        white-space: nowrap;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    .floating-btn:hover {
+        transform: translate(-50%, -3px);
+    }
+
     .scroll-indicator {
         display: none;
     }
