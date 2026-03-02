@@ -1034,20 +1034,43 @@ h6 {
 /* --- Responsive — Mobile --- */
 @media (max-width: 768px) {
     .about-section {
-        padding: 4rem 5%;
+        padding: 5vh 5vw;
         min-height: auto;
     }
     .about-title {
-        font-size: 1.8rem;
+        font-size: clamp(1.8rem, 6vw, 2.8rem);
+        margin-bottom: 2vh;
     }
     .about-paragraph {
-        font-size: 1rem;
+        font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+    }
+    .about-text-card {
+        padding: 2.5vh 5vw;
+    }
+    .about-card {
+        padding: 2vh 4vw;
+        gap: 3vw;
+    }
+    .about-card-icon {
+        width: clamp(40px, 12vw, 54px);
+        height: clamp(40px, 12vw, 54px);
+        min-width: clamp(40px, 12vw, 54px);
+    }
+    .about-card-body h4 {
+        font-size: clamp(1rem, 4vw, 1.15rem);
+        margin-bottom: 0.5vh;
+    }
+    .about-card-body p {
+        font-size: clamp(0.85rem, 3.5vw, 0.95rem);
     }
 }
 
 @media (max-width: 480px) {
     .about-section {
-        padding: 3rem 4%;
+        padding: 4vh 4vw;
+    }
+    .about-split {
+        gap: 4vh;
     }
 }
 
@@ -1485,44 +1508,56 @@ h6 {
 /* --- Responsive — Tablet/Mobile --- */
 @media (max-width: 768px) {
     .speaker-section {
-        padding: 4rem 5%;
+        padding: 6vh 5vw;
+        height: auto;
         min-height: auto;
     }
     .speaker-card {
         flex-direction: column;
         text-align: center;
-        padding: 2.5rem 2rem;
-        gap: 1.5rem;
+        padding: 4vh 6vw;
+        gap: 3vh;
     }
     .speaker-photo-wrap {
-        width: 160px;
-        height: 160px;
+        width: clamp(140px, 35vw, 180px);
+        height: clamp(140px, 35vw, 180px);
     }
     .speaker-name {
-        font-size: 1.35rem;
+        font-size: clamp(1.4rem, 5vw, 1.8rem);
+        margin-bottom: 0.5vh;
     }
     .speaker-details {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+    .speaker-role {
+        font-size: clamp(0.9rem, 3.5vw, 1rem);
+        margin-bottom: 1vh;
+    }
     .speaker-affiliation {
         justify-content: center;
+        font-size: clamp(0.85rem, 3vw, 0.95rem);
+        margin-bottom: 2vh;
+    }
+    .speaker-bio {
+        font-size: clamp(0.9rem, 3.5vw, 1rem);
     }
     .speaker-title-heading {
-        font-size: 1.8rem;
+        font-size: clamp(2rem, 6vw, 2.8rem);
+        margin-bottom: 1.5vh;
     }
 }
 @media (max-width: 480px) {
     .speaker-section {
-        padding: 3rem 4%;
+        padding: 4vh 4vw;
     }
     .speaker-card {
-        padding: 2rem 1.5rem;
+        padding: 3vh 5vw;
     }
     .speaker-photo-wrap {
-        width: 130px;
-        height: 130px;
+        width: clamp(120px, 40vw, 150px);
+        height: clamp(120px, 40vw, 150px);
     }
 }
 
@@ -4067,35 +4102,71 @@ h6 {
     /* Hero Responsive */
     .hero-content {
         flex-direction: column;
-        padding: 5rem 2rem 3rem 2rem;
+        padding: 12vh 5vw 4vh 5vw;
         text-align: center;
         align-items: center;
+        justify-content: center;
+        height: 100vh;
     }
     .hero-left {
         max-width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 1rem;
+        margin-bottom: 2vh;
     }
     .hero-right {
         width: 100%;
         max-width: 100%;
         align-items: stretch;
+        gap: 1.5vh;
     }
     .hero-badge {
-        margin: 0 auto 1.5rem auto;
+        margin: 0 auto 1.5vh auto;
+        padding: 0.8vh 3vw;
+        font-size: clamp(0.7rem, 2.5vw, 0.9rem);
     }
     .hero-title {
-        font-size: clamp(2rem, 8vw, 3rem);
+        font-size: clamp(2.2rem, 9vw, 3.5rem);
+        margin-bottom: 1.5vh;
+        line-height: 1.1;
+    }
+    .hero-conf-name {
+        margin-top: 0.5vh;
+        font-size: clamp(1rem, 3.5vw, 1.4rem);
+    }
+    .hero-info-card {
+        padding: 1.5vh 5vw;
+        gap: 3vw;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+    }
+    .hero-info-text {
+        align-items: flex-start;
+    }
+    .hero-info-icon {
+        width: clamp(38px, 10vw, 48px);
+        height: clamp(38px, 10vw, 48px);
+    }
+    .hero-info-value {
+        font-size: clamp(1rem, 4vw, 1.15rem);
     }
     .hero-btns {
         flex-direction: column;
         width: 100%;
+        gap: 1.5vh;
+        margin-top: 1vh;
     }
     .btn-primary,
     .btn-outline {
         width: 100%;
+        padding: 1.8vh 4vw;
+        font-size: clamp(0.9rem, 4.5vw, 1.1rem);
+    }
+
+    .scroll-indicator {
+        display: none;
     }
 
     /* General layout adjustments */
@@ -4112,16 +4183,8 @@ h6 {
 }
 
 @media (max-width: 480px) {
-    .hero-content {
-        padding: 5rem 1.5rem 2rem 1.5rem;
-    }
     .venue-gallery {
         grid-template-columns: 1fr;
-    }
-    .hero-info-card {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.5rem;
     }
     .cfa-award-badges {
         flex-direction: column;
