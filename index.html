@@ -1,0 +1,1470 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>
+            ICETCD 2026 | International Conference on Emerging Trends in
+            Contemporary Dentistry
+        </title>
+        <meta
+            name="description"
+            content="International Conference on Emerging Trends in Contemporary Dentistry (ICETCD 2026), 10-11 April 2026, Teerthanker Mahaveer University, Moradabad. Register now for keynotes, workshops, and awards."
+        />
+        <meta
+            name="keywords"
+            content="ICETCD 2026, dentistry conference, contemporary dentistry, TMU, Moradabad, dental conference India"
+        />
+        <meta
+            property="og:title"
+            content="ICETCD 2026 | Emerging Trends in Contemporary Dentistry"
+        />
+        <meta
+            property="og:description"
+            content="Join the premier dental conference at Teerthanker Mahaveer University, Moradabad. 10-11 April 2026."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://icetcd2026.vercel.app" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <!-- Scroll Progress Bar -->
+        <div id="scroll-progress"></div>
+
+        <!-- Preloader -->
+        <div id="preloader">
+            <div class="preloader-icon"></div>
+            <div class="preloader-text">ICETCD 2026</div>
+        </div>
+
+        <!-- Navbar -->
+        <nav class="navbar" id="navbar">
+            <div class="container">
+                <a href="#hero" class="nav-logo">
+                    <div class="nav-logo-img">
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/Adi15Jain/assets@main/icetcd/logo.png"
+                            alt=""
+                        />
+                    </div>
+                    <div class="nav-logo-text">ICE<span>TCD</span></div>
+                </a>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#hero" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#speakers">Speakers</a></li>
+                    <!-- <li><a href="#registration">Registration</a></li> -->
+                    <li><a href="#abstracts">Abstracts</a></li>
+                    <li><a href="#venue">Venue</a></li>
+                    <li><a href="#committee">Committees</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li>
+                        <a href="#registration" class="nav-cta">Register Now</a>
+                    </li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="hero">
+            <canvas id="hero-canvas"></canvas>
+            <div class="hero-overlay"></div>
+            <div class="hero-content" id="hero-content">
+                <!-- Left Column: Badge + Title -->
+                <div class="hero-left">
+                    <div class="hero-badge hero-anim" data-delay="0.4">
+                        <span class="hero-badge-dot"></span>
+                        International Conference
+                    </div>
+                    <h1 class="hero-title hero-anim" data-delay="0.6">
+                        <span class="accent">Emerging <br />Trends</span>
+                        <span>in</span>
+                        Contemporary Dentistry
+                    </h1>
+                    <p class="hero-conf-name hero-anim" data-delay="0.85">
+                        (ICETCD-2026)
+                    </p>
+                </div>
+                <!-- Right Column: Info Cards + CTAs -->
+                <div class="hero-right">
+                    <div class="hero-info-card hero-anim" data-delay="0.7">
+                        <div class="hero-info-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="hero-info-text">
+                            <span class="hero-info-label">Organised By</span>
+                            <span class="hero-info-value"
+                                >Department of Dental Sciences, TMU</span
+                            >
+                        </div>
+                    </div>
+                    <div class="hero-info-card hero-anim" data-delay="0.85">
+                        <div class="hero-info-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="hero-info-text">
+                            <span class="hero-info-label">Date</span>
+                            <span class="hero-info-value"
+                                >10th – 11th April 2026</span
+                            >
+                        </div>
+                    </div>
+                    <div class="hero-info-card hero-anim" data-delay="1.0">
+                        <div class="hero-info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="hero-info-text">
+                            <span class="hero-info-label">Venue</span>
+                            <span class="hero-info-value">TMU, Moradabad</span>
+                        </div>
+                    </div>
+                    <div class="hero-btns hero-anim" data-delay="1.15">
+                        <a
+                            href="#registration"
+                            class="btn-primary"
+                            onclick="openModal('register-modal')"
+                        >
+                            Register Now
+                        </a>
+                        <a
+                            href="#abstracts"
+                            class="btn-outline"
+                            onclick="openModal('abstract-modal')"
+                        >
+                            Submit Abstract
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator hero-anim" data-delay="1.5">
+                <div class="scroll-line">
+                    <div class="scroll-dot"></div>
+                </div>
+                <span class="scroll-text">Scroll</span>
+            </div>
+        </section>
+
+        <!-- ========== ABOUT THE CONFERENCE ========== -->
+        <section id="about" class="about-section">
+            <!-- Three.js interactive background canvas (separate from hero) -->
+            <canvas id="about-canvas"></canvas>
+
+            <!-- Glassmorphic overlay container -->
+            <div class="about-container">
+                <!-- Section heading area -->
+                <div class="about-header" id="about-header">
+                    <div class="section-badge">About</div>
+                    <h2 class="about-title">About the Conference</h2>
+                    <!-- Accent glowing underline -->
+                    <div class="about-title-line"></div>
+                </div>
+
+                <!-- Asymmetric split: 60% text / 40% cards -->
+                <div class="about-split">
+                    <!-- LEFT: Rich content area -->
+                    <div class="about-content" id="about-content">
+                        <div
+                            class="about-text-card about-anim"
+                            data-delay="0.1"
+                        >
+                            <p class="about-paragraph">
+                                The International Conference on Emerging Trends
+                                in Contemporary Dentistry (ICETCD 2026) is the
+                                premier global forum dedicated to the
+                                intersection of traditional clinical excellence
+                                and the rapid technological revolution in oral
+                                healthcare.
+                            </p>
+                        </div>
+                        <div
+                            class="about-text-card about-anim"
+                            data-delay="0.25"
+                        >
+                            <p class="about-paragraph">
+                                As we navigate an era defined by digital
+                                workflows, artificial intelligence, and
+                                personalized medicine, this conference serves as
+                                a vital compass for dental professionals.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Interactive highlight cards stack -->
+                    <div class="about-cards" id="about-cards">
+                        <div
+                            class="about-card about-anim"
+                            data-delay="0.2"
+                            data-tilt
+                        >
+                            <div class="about-card-icon">
+                                <i class="fas fa-microphone-alt"></i>
+                            </div>
+                            <div class="about-card-body">
+                                <h4>Global Keynote Speakers</h4>
+                                <p>
+                                    World-renowned dental experts sharing
+                                    cutting-edge research and clinical
+                                    innovations from across the globe.
+                                </p>
+                            </div>
+                            <div class="about-card-glow"></div>
+                        </div>
+                        <div
+                            class="about-card about-anim"
+                            data-delay="0.35"
+                            data-tilt
+                        >
+                            <div class="about-card-icon">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <div class="about-card-body">
+                                <h4>Hands-on Workshops</h4>
+                                <p>
+                                    Interactive learning sessions on digital
+                                    dentistry, AI diagnostics, 3D printing, and
+                                    regenerative techniques.
+                                </p>
+                            </div>
+                            <div class="about-card-glow"></div>
+                        </div>
+                        <div
+                            class="about-card about-anim"
+                            data-delay="0.5"
+                            data-tilt
+                        >
+                            <div class="about-card-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="about-card-body">
+                                <h4>Paper &amp; Poster Presentations</h4>
+                                <p>
+                                    Present your research, compete for
+                                    attractive cash prizes, and contribute to
+                                    the evolving landscape of dentistry.
+                                </p>
+                            </div>
+                            <div class="about-card-glow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== KEYNOTE SPEAKER ========== -->
+        <section id="speakers" class="speaker-section">
+            <!-- Floating decorative shapes -->
+            <div class="speaker-shape speaker-shape-1"></div>
+            <div class="speaker-shape speaker-shape-2"></div>
+            <div class="speaker-shape speaker-shape-3"></div>
+
+            <div class="speaker-container">
+                <!-- Section heading -->
+                <div class="speaker-header" id="speaker-header">
+                    <div class="section-badge speaker-badge">
+                        Keynote Speaker
+                    </div>
+                    <h2 class="speaker-title-heading">Distinguished Speaker</h2>
+                    <div class="speaker-title-line"></div>
+                </div>
+
+                <!-- Glassmorphic speaker card -->
+                <div
+                    class="speaker-card speaker-anim"
+                    data-delay="0.2"
+                    data-tilt-speaker
+                >
+                    <div class="speaker-card-glow"></div>
+
+                    <!-- Photo with animated border -->
+                    <div
+                        class="speaker-photo-wrap speaker-anim"
+                        data-delay="0.3"
+                    >
+                        <div class="speaker-photo-ring"></div>
+                        <div class="speaker-photo">
+                            <img
+                                src=""
+                                alt="Noratikah binti Awang Hasyim"
+                                class="fas"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Speaker details -->
+                    <div class="speaker-details speaker-anim" data-delay="0.45">
+                        <span class="speaker-flag">
+                            <i class="fas fa-globe-asia"></i> Malaysia
+                        </span>
+                        <h3 class="speaker-name">
+                            Dr. Noratikah binti Awang Hasyim
+                        </h3>
+                        <div class="speaker-role">
+                            <i class="fas fa-microphone-alt"></i>
+                            International Keynote Speaker
+                        </div>
+                        <div class="speaker-affiliation">
+                            <i class="fas fa-university"></i>
+                            Malaysia
+                        </div>
+                        <p class="speaker-bio">
+                            Dr. Noratikah binti Awang Hasyim is a distinguished
+                            dental professional and researcher from Malaysia,
+                            bringing international expertise and perspective to
+                            ICETCD 2026. She will deliver a keynote address on
+                            the latest trends and innovations in contemporary
+                            dentistry.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== WHY ATTEND ========== -->
+        <section id="why-attend" class="why-section">
+            <!-- Large coloured floating shapes -->
+            <div class="why-float why-float-1"></div>
+            <div class="why-float why-float-2"></div>
+            <div class="why-float why-float-3"></div>
+            <div class="why-float why-float-4"></div>
+            <div class="why-float why-float-5"></div>
+
+            <div class="why-container">
+                <!-- Section heading -->
+                <div class="why-header" id="why-header">
+                    <div class="section-badge">Why Attend?</div>
+                    <h2 class="why-title">Why You Should Be There</h2>
+                    <div class="why-title-line"></div>
+                </div>
+
+                <div class="why-grid">
+                    <div
+                        class="why-card why-anim"
+                        data-delay="0.1"
+                        data-tilt-why
+                    >
+                        <div class="why-card-glow"></div>
+                        <div class="why-card-number">01</div>
+                        <div class="why-icon">
+                            <i class="fas fa-laptop-medical"></i>
+                        </div>
+                        <h3>Master New Technologies</h3>
+                        <p>
+                            Explore cutting-edge digital dentistry, AI
+                            diagnostics, 3D printing, and more through
+                            expert-led sessions and hands-on workshops.
+                        </p>
+                    </div>
+                    <div
+                        class="why-card why-anim"
+                        data-delay="0.2"
+                        data-tilt-why
+                    >
+                        <div class="why-card-glow"></div>
+                        <div class="why-card-number">02</div>
+                        <div class="why-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Global Networking</h3>
+                        <p>
+                            Connect with leading dental professionals,
+                            researchers, and academicians from around the world.
+                            Build lasting professional relationships.
+                        </p>
+                    </div>
+                    <div
+                        class="why-card why-anim"
+                        data-delay="0.3"
+                        data-tilt-why
+                    >
+                        <div class="why-card-glow"></div>
+                        <div class="why-card-number">03</div>
+                        <div class="why-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Future-Proof Your Practice</h3>
+                        <p>
+                            Stay ahead of the curve with insights into emerging
+                            trends that will shape the future of dentistry in
+                            the coming decade.
+                        </p>
+                    </div>
+                    <div
+                        class="why-card why-anim"
+                        data-delay="0.4"
+                        data-tilt-why
+                    >
+                        <div class="why-card-glow"></div>
+                        <div class="why-card-number">04</div>
+                        <div class="why-icon">
+                            <i class="fas fa-dna"></i>
+                        </div>
+                        <h3>Be Part of the Evolution</h3>
+                        <p>
+                            Present your research, contribute to scientific
+                            discourse, and be part of the evolving landscape of
+                            contemporary dentistry.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== REGISTRATION ========== -->
+        <section id="registration" class="reg-section">
+            <!-- Subtle floating shapes -->
+            <div class="reg-float reg-float-1"></div>
+            <div class="reg-float reg-float-2"></div>
+            <div class="reg-float reg-float-3"></div>
+
+            <div class="reg-container">
+                <!-- Section heading -->
+                <div class="reg-header" id="reg-header">
+                    <div class="section-badge reg-badge">Registration</div>
+                    <h2 class="reg-heading">Registration Details</h2>
+                    <div class="reg-heading-line"></div>
+                </div>
+
+                <!-- Registration table -->
+                <div class="reg-table-wrap reg-anim" data-delay="0.15">
+                    <table class="reg-table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>
+                                    Early Bird<br /><small
+                                        >(Till 28 Feb 2026)</small
+                                    >
+                                </th>
+                                <th>
+                                    Regular<br /><small
+                                        >(Till 31 Mar 2026)</small
+                                    >
+                                </th>
+                                <th>On-Spot</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="category">PG Students</td>
+                                <td>₹ 1,500</td>
+                                <td>₹ 2,000</td>
+                                <td>₹ 2,500</td>
+                            </tr>
+                            <tr>
+                                <td class="category">
+                                    Faculty / Practitioners
+                                </td>
+                                <td>₹ 2,500</td>
+                                <td>₹ 3,000</td>
+                                <td>₹ 3,500</td>
+                            </tr>
+                            <tr>
+                                <td class="category">UG Students</td>
+                                <td>₹ 1,000</td>
+                                <td>₹ 1,200</td>
+                                <td>₹ 1,500</td>
+                            </tr>
+                            <tr>
+                                <td class="category">Accompanying Person</td>
+                                <td>₹ 1,000</td>
+                                <td>₹ 1,200</td>
+                                <td>₹ 1,500</td>
+                            </tr>
+                            <tr>
+                                <td class="category">
+                                    International Delegates
+                                </td>
+                                <td colspan="3"><strong>USD 75</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Bank details + QR code -->
+                <div class="reg-payment-grid">
+                    <div class="reg-bank-card reg-anim" data-delay="0.25">
+                        <h4>
+                            <i class="fas fa-university"></i> Payment Account
+                            Details
+                        </h4>
+                        <div class="reg-detail-row">
+                            <span class="reg-label">A/C No.</span>
+                            <span class="reg-value">6010000100089458</span>
+                        </div>
+                        <div class="reg-detail-row">
+                            <span class="reg-label">A/C Name</span>
+                            <span class="reg-value"
+                                >Teerthanker Mahaveer Ins. of Management &
+                                Technology</span
+                            >
+                        </div>
+                        <div class="reg-detail-row">
+                            <span class="reg-label">Bank / City</span>
+                            <span class="reg-value"
+                                >Punjab National Bank, Moradabad</span
+                            >
+                        </div>
+                        <div class="reg-detail-row">
+                            <span class="reg-label">IFSC</span>
+                            <span class="reg-value">PUNB0601000</span>
+                        </div>
+                    </div>
+
+                    <div class="reg-qr-card reg-anim" data-delay="0.35">
+                        <h4><i class="fas fa-qrcode"></i> Scan to Pay</h4>
+                        <div class="reg-qr-img-wrap">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/Adi15Jain/assets@main/icetcd/payqr.png"
+                                alt="Payment QR Code"
+                                class="reg-qr-img"
+                            />
+                        </div>
+                        <p class="reg-qr-caption">
+                            Scan QR code for UPI / Bank Transfer
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="reg-cta reg-anim" data-delay="0.45">
+                    <button
+                        class="btn-primary"
+                        onclick="openModal('register-modal')"
+                    >
+                        <i class="fas fa-user-plus"></i> Click Here to Register
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CALL FOR ABSTRACTS ========== -->
+        <section id="abstracts" class="cfa-section">
+            <!-- Floating decorative shapes -->
+            <div class="cfa-float cfa-float-1"></div>
+            <div class="cfa-float cfa-float-2"></div>
+            <div class="cfa-float cfa-float-3"></div>
+            <div class="cfa-float cfa-float-4"></div>
+            <div class="cfa-float cfa-float-5"></div>
+
+            <div class="cfa-container">
+                <!-- Section heading -->
+                <div class="cfa-header" id="cfa-header">
+                    <div class="section-badge cfa-badge">
+                        Call for Abstracts
+                    </div>
+                    <h2 class="cfa-heading">Call for Abstracts & Awards</h2>
+                    <div class="cfa-heading-line"></div>
+                </div>
+
+                <!-- Presentation cards grid -->
+                <div class="cfa-grid">
+                    <div
+                        class="cfa-card cfa-anim"
+                        data-delay="0.1"
+                        data-tilt-cfa
+                    >
+                        <div class="cfa-card-glow"></div>
+                        <div class="cfa-card-number">01</div>
+                        <div class="cfa-icon">
+                            <i class="fas fa-file-medical-alt"></i>
+                        </div>
+                        <h3>Scientific Papers</h3>
+                        <p>
+                            Submit original research papers on any topic related
+                            to contemporary dentistry. Oral presentations will
+                            be evaluated by expert judges.
+                        </p>
+                    </div>
+                    <div
+                        class="cfa-card cfa-anim"
+                        data-delay="0.2"
+                        data-tilt-cfa
+                    >
+                        <div class="cfa-card-glow"></div>
+                        <div class="cfa-card-number">02</div>
+                        <div class="cfa-icon">
+                            <i class="fas fa-chalkboard"></i>
+                        </div>
+                        <h3>Poster Presentations</h3>
+                        <p>
+                            Present your research through visually impactful
+                            posters. Theme-based and free-topic poster
+                            categories available.
+                        </p>
+                    </div>
+                    <div
+                        class="cfa-card cfa-anim"
+                        data-delay="0.3"
+                        data-tilt-cfa
+                    >
+                        <div class="cfa-card-glow"></div>
+                        <div class="cfa-card-number">03</div>
+                        <div class="cfa-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Theme-Based Posters</h3>
+                        <p>
+                            Create posters aligned with the conference theme —
+                            Emerging Trends in Contemporary Dentistry — for a
+                            dedicated evaluation track.
+                        </p>
+                    </div>
+                    <div
+                        class="cfa-card cfa-anim"
+                        data-delay="0.4"
+                        data-tilt-cfa
+                    >
+                        <div class="cfa-card-glow"></div>
+                        <div class="cfa-card-number">04</div>
+                        <div class="cfa-icon">
+                            <i class="fas fa-glass-cheers"></i>
+                        </div>
+                        <h3>Gala Banquet</h3>
+                        <p>
+                            Experience an unforgettable evening of celebration
+                            with cultural performances, traditional dances, live
+                            entertainment, and networking.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Vibrant Awards subsection -->
+                <div
+                    class="cfa-awards-card cfa-anim"
+                    data-delay="0.5"
+                    data-tilt-cfa
+                >
+                    <div class="cfa-card-glow"></div>
+
+                    <!-- Decorative floating sparkles -->
+                    <div class="cfa-sparkle cfa-sparkle-1"></div>
+                    <div class="cfa-sparkle cfa-sparkle-2"></div>
+                    <div class="cfa-sparkle cfa-sparkle-3"></div>
+
+                    <div class="cfa-awards-content">
+                        <div class="cfa-awards-header">
+                            <div class="cfa-awards-icon-wrap">
+                                <div class="cfa-awards-icon-glow"></div>
+                                <div class="cfa-awards-icon">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                            </div>
+                            <div class="cfa-awards-text">
+                                <h3>Attractive Awards</h3>
+                                <p class="cfa-awards-subtitle">
+                                    Outstanding presentations will be recognized
+                                    with exclusive cash prizes and medallions.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="cfa-award-badges">
+                            <div class="cfa-award-badge cfa-award-gold">
+                                <div class="cfa-award-medal">
+                                    <i class="fas fa-medal"></i>
+                                </div>
+                                <div class="cfa-award-amount">₹ 5,000</div>
+                                <div class="cfa-award-label">
+                                    Best Paper / Poster
+                                </div>
+                            </div>
+                            <div class="cfa-award-badge cfa-award-silver">
+                                <div class="cfa-award-medal">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <div class="cfa-award-amount">₹ 2,500</div>
+                                <div class="cfa-award-label">Runner Up</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== VENUE ========== -->
+        <section id="venue" class="venue-section">
+            <div class="cfa-container">
+                <!-- Reuse container constraints -->
+                <div class="venue-header venue-anim" data-delay="0.1">
+                    <div class="venue-badge">Venue & Destination</div>
+                    <h2 class="venue-title">Venue & Destination</h2>
+                    <div class="venue-line"></div>
+                </div>
+
+                <!-- Main Info Cards -->
+                <div class="venue-intro-grid">
+                    <div class="venue-main-card venue-anim" data-delay="0.2">
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/Adi15Jain/assets@main/icetcd/tmu.webp"
+                            alt="TMU Campus"
+                            class="venue-card-bg"
+                        />
+                        <div class="venue-card-overlay"></div>
+                        <div class="venue-card-content">
+                            <div class="venue-card-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <h3>Teerthanker Mahaveer University, Moradabad</h3>
+                            <p>
+                                Teerthanker Mahaveer University (TMU) is a
+                                premier institution located in Delhi Road,
+                                Moradabad, Uttar Pradesh. Spread over a
+                                sprawling campus, TMU is known for its
+                                world-class infrastructure, state-of-the-art
+                                facilities, and commitment to academic
+                                excellence. The university hosts numerous
+                                national and international conferences, making
+                                it an ideal venue for ICETCD 2026.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="venue-main-card venue-anim" data-delay="0.3">
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/Adi15Jain/assets@main/icetcd/moradabad.jpeg"
+                            alt="Moradabad Brass City"
+                            class="venue-card-bg"
+                        />
+                        <div class="venue-card-overlay"></div>
+                        <div class="venue-card-content">
+                            <div class="venue-card-icon">
+                                <i class="fas fa-city"></i>
+                            </div>
+                            <h3>About Moradabad – The Brass City</h3>
+                            <p>
+                                Moradabad, known as the "Brass City of India,"
+                                is a vibrant city in the Moradabad division of
+                                Uttar Pradesh. Strategically located and
+                                well-connected by road and rail, Moradabad is a
+                                gateway to some of the most beautiful
+                                destinations in Uttarakhand and North India.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Animated Image Gallery -->
+                <div class="venue-gallery">
+                    <div class="venue-gallery-item venue-anim" data-delay="0.4">
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/Adi15Jain/assets@main/icetcd/nainital.jpeg"
+                            alt="Nainital"
+                            class="venue-img"
+                        />
+                        <div class="venue-gallery-overlay">
+                            <h4 class="venue-label">
+                                Nainital – The Lake City
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="venue-gallery-item venue-anim" data-delay="0.5">
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/Adi15Jain/assets@main/icetcd/temple.webp"
+                            alt="Hanuman Temple"
+                            class="venue-img"
+                        />
+                        <div class="venue-gallery-overlay">
+                            <h4 class="venue-label">
+                                Hanuman Temple, Moradabad
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="venue-gallery-item venue-anim" data-delay="0.6">
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/Adi15Jain/assets@main/icetcd/kainchi.jpeg"
+                            alt="Kainchi Dham"
+                            class="venue-img"
+                        />
+                        <div class="venue-gallery-overlay">
+                            <h4 class="venue-label">Kainchi Dham</h4>
+                        </div>
+                    </div>
+                    <div class="venue-gallery-item venue-anim" data-delay="0.7">
+                        <img
+                            src="https://cdn.jsdelivr.net/gh/Adi15Jain/assets@main/icetcd/jimcorbett.webp"
+                            alt="Jim Corbett"
+                            class="venue-img"
+                        />
+                        <div class="venue-gallery-overlay">
+                            <h4 class="venue-label">
+                                Jim Corbett National Park
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== COMMITTEE ========== -->
+        <section id="committee" class="comm-section">
+            <!-- Floating decorative shapes -->
+            <div class="comm-float comm-float-1"></div>
+            <div class="comm-float comm-float-2"></div>
+            <div class="comm-float comm-float-3"></div>
+            <div class="comm-float comm-float-4"></div>
+            <div class="comm-float comm-float-5"></div>
+
+            <div class="comm-container">
+                <!-- Section heading -->
+                <div class="comm-header" id="comm-header">
+                    <div class="section-badge comm-badge">
+                        Organizing Committee
+                    </div>
+                    <h2 class="comm-title">Patrons & Organizing Committee</h2>
+                    <div class="comm-title-line"></div>
+                </div>
+
+                <!-- Chief Patrons -->
+                <div class="comm-category comm-anim" data-delay="0.1">
+                    <div class="comm-category-header">
+                        <!-- <div class="comm-cat-icon">
+                            <i class="fas fa-crown"></i>
+                        </div> -->
+                        <h3>Chief Patrons</h3>
+                    </div>
+                    <div class="comm-portrait-grid">
+                        <div
+                            class="comm-portrait comm-anim"
+                            data-delay="0.15"
+                            data-tilt-comm
+                        >
+                            <div class="comm-card-glow"></div>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/Adi15Jain/assets@main/icetcd/s.jpg"
+                                alt="Shri Suresh Jain"
+                                class="comm-portrait-img"
+                            />
+                            <div class="comm-portrait-overlay"></div>
+                            <div class="comm-portrait-info">
+                                <div class="comm-portrait-badge">
+                                    Chief Patron
+                                </div>
+                                <h4>Shri Suresh Jain</h4>
+                                <p>Chancellor, TMU</p>
+                            </div>
+                        </div>
+                        <div
+                            class="comm-portrait comm-anim"
+                            data-delay="0.25"
+                            data-tilt-comm
+                        >
+                            <div class="comm-card-glow"></div>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/Adi15Jain/assets@main/icetcd/m.jpg"
+                                alt="Shri Manish Jain"
+                                class="comm-portrait-img"
+                            />
+                            <div class="comm-portrait-overlay"></div>
+                            <div class="comm-portrait-info">
+                                <div class="comm-portrait-badge">
+                                    Chief Patron
+                                </div>
+                                <h4>Shri Manish Jain</h4>
+                                <p>Group Vice Chairman, TMU</p>
+                            </div>
+                        </div>
+                        <div
+                            class="comm-portrait comm-anim"
+                            data-delay="0.35"
+                            data-tilt-comm
+                        >
+                            <div class="comm-card-glow"></div>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/Adi15Jain/assets@main/icetcd/a.png"
+                                alt="Shri Akshat Jain"
+                                class="comm-portrait-img"
+                            />
+                            <div class="comm-portrait-overlay"></div>
+                            <div class="comm-portrait-info">
+                                <div class="comm-portrait-badge">
+                                    Chief Patron
+                                </div>
+                                <h4>Shri Akshat Jain</h4>
+                                <p>Group Vice Chairman, TMU</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guiding Sources -->
+                <div class="comm-category comm-anim" data-delay="0.15">
+                    <div class="comm-category-header">
+                        <!-- <div class="comm-cat-icon comm-cat-icon-blue">
+                            <i class="fas fa-compass"></i>
+                        </div> -->
+                        <h3>Guiding Sources</h3>
+                    </div>
+                    <div class="comm-portrait-grid comm-portrait-grid-left">
+                        <div
+                            class="comm-portrait comm-portrait-blue comm-anim"
+                            data-delay="0.2"
+                            data-tilt-comm
+                        >
+                            <div class="comm-card-glow"></div>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/Adi15Jain/assets@main/icetcd/VKJain.png"
+                                alt="Prof. (Dr.) V.K. Jain"
+                                class="comm-portrait-img"
+                            />
+                            <div
+                                class="comm-portrait-overlay comm-portrait-overlay-blue"
+                            ></div>
+                            <div class="comm-portrait-info">
+                                <div
+                                    class="comm-portrait-badge comm-portrait-badge-blue"
+                                >
+                                    Patron
+                                </div>
+                                <h4>Prof. (Dr.) V.K. Jain</h4>
+                                <p>Vice Chancellor, TMU</p>
+                            </div>
+                        </div>
+                        <div
+                            class="comm-portrait comm-portrait-blue comm-anim"
+                            data-delay="0.3"
+                            data-tilt-comm
+                            style="margin-left: 2rem"
+                        >
+                            <div class="comm-card-glow"></div>
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/Adi15Jain/assets@main/icetcd/ManjulaJain.jpeg"
+                                alt="Prof. (Dr.) Manjula Jain"
+                                class="comm-portrait-img"
+                            />
+                            <div
+                                class="comm-portrait-overlay comm-portrait-overlay-blue"
+                            ></div>
+                            <div class="comm-portrait-info">
+                                <div
+                                    class="comm-portrait-badge comm-portrait-badge-blue"
+                                >
+                                    Patron
+                                </div>
+                                <h4>Prof. (Dr.) Manjula Jain</h4>
+                                <p>Dean Academics, TMU</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Organizing Chairperson & Secretary -->
+                <div class="comm-category comm-anim" data-delay="0.2">
+                    <div class="comm-category-header">
+                        <!-- <div class="comm-cat-icon comm-cat-icon-green">
+                            <i class="fas fa-users-cog"></i>
+                        </div> -->
+                        <h3>Organizing Chairperson & Secretary</h3>
+                    </div>
+                    <div class="comm-core-grid">
+                        <div
+                            class="comm-core-card comm-anim"
+                            data-delay="0.25"
+                            data-tilt-comm
+                        >
+                            <div class="comm-card-glow"></div>
+                            <div class="comm-core-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="comm-core-info">
+                                <h4>Prof. (Dr.) Jitendra Sharan</h4>
+                                <p class="comm-role-text">
+                                    Organizing Chairperson
+                                </p>
+                                <p class="comm-sub-text">
+                                    Principal & Dean, TMDCRC
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="comm-core-card comm-anim"
+                            data-delay="0.35"
+                            data-tilt-comm
+                        >
+                            <div class="comm-card-glow"></div>
+                            <div class="comm-core-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="comm-core-info">
+                                <h4>Dr. Kartikay Saxena</h4>
+                                <p class="comm-role-text">
+                                    Organizing Secretary
+                                </p>
+                                <p class="comm-sub-text">TMDCRC</p>
+                            </div>
+                        </div>
+                        <div
+                            class="comm-core-card comm-anim"
+                            data-delay="0.45"
+                            data-tilt-comm
+                        >
+                            <div class="comm-card-glow"></div>
+                            <div class="comm-core-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="comm-core-info">
+                                <h4>Dr. Zainul Abedeen</h4>
+                                <p class="comm-role-text">
+                                    Organizing Secretary
+                                </p>
+                                <p class="comm-sub-text">TMDCRC</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Committee -->
+                <div class="comm-category comm-anim" data-delay="0.25">
+                    <div class="comm-category-header">
+                        <!-- <div class="comm-cat-icon comm-cat-icon-purple">
+                            <i class="fas fa-layer-group"></i>
+                        </div> -->
+                        <h3>Core Organizing Committee</h3>
+                    </div>
+                    <div class="comm-core-grid">
+                        <div
+                            class="comm-core-card comm-anim"
+                            data-delay="0.3"
+                            data-tilt-comm
+                        >
+                            <div class="comm-card-glow"></div>
+                            <div class="comm-core-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="comm-core-info">
+                                <h4>Dr. Somya Jain</h4>
+                                <p class="comm-role-text">
+                                    Core Committee Member
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="comm-core-card comm-anim"
+                            data-delay="0.35"
+                            data-tilt-comm
+                        >
+                            <div class="comm-card-glow"></div>
+                            <div class="comm-core-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="comm-core-info">
+                                <h4>Dr. Sandhya Maheshwari</h4>
+                                <p class="comm-role-text">
+                                    Core Committee Member
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="comm-core-card comm-anim"
+                            data-delay="0.4"
+                            data-tilt-comm
+                        >
+                            <div class="comm-card-glow"></div>
+                            <div class="comm-core-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="comm-core-info">
+                                <h4>Dr. Deepak Umapathy</h4>
+                                <p class="comm-role-text">
+                                    Core Committee Member
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="comm-core-card comm-anim"
+                            data-delay="0.45"
+                            data-tilt-comm
+                        >
+                            <div class="comm-card-glow"></div>
+                            <div class="comm-core-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="comm-core-info">
+                                <h4>Dr. Seema Bargale</h4>
+                                <p class="comm-role-text">
+                                    Core Committee Member
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="comm-core-card comm-anim"
+                            data-delay="0.5"
+                            data-tilt-comm
+                        >
+                            <div class="comm-card-glow"></div>
+                            <div class="comm-core-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="comm-core-info">
+                                <h4>Dr. Sunil Kumar</h4>
+                                <p class="comm-role-text">
+                                    Core Committee Member
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="comm-core-card comm-anim"
+                            data-delay="0.55"
+                            data-tilt-comm
+                        >
+                            <div class="comm-card-glow"></div>
+                            <div class="comm-core-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="comm-core-info">
+                                <h4>Dr. Pramod Jain</h4>
+                                <p class="comm-role-text">
+                                    Core Committee Member
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CONTACT / FOOTER ========== -->
+        <footer id="contact" class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div
+                            style="
+                                display: flex;
+                                align-items: center;
+                                gap: 0.8rem;
+                                margin-bottom: 1rem;
+                            "
+                        >
+                            <div
+                                class="nav-logo-img"
+                                style="border-color: rgba(255, 255, 255, 0.2)"
+                            >
+                                <img
+                                    src="https://cdn.jsdelivr.net/gh/Adi15Jain/assets@main/icisse/logo.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div>
+                                <strong style="font-size: 1.1rem"
+                                    >ICETCD 2026</strong
+                                ><br /><span
+                                    style="font-size: 0.75rem; opacity: 0.7"
+                                    >Teerthanker Mahaveer University</span
+                                >
+                            </div>
+                        </div>
+                        <p>
+                            International Conference on Emerging Trends in
+                            Contemporary Dentistry
+                        </p>
+                        <p style="margin-top: 0.5rem">
+                            Teerthanker Mahaveer Dental College & Research
+                            Centre, Delhi Road, Moradabad, UP – 244001
+                        </p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul class="footer-links">
+                            <li>
+                                <a href="#about"
+                                    ><i
+                                        class="fas fa-chevron-right"
+                                        style="font-size: 0.6rem"
+                                    ></i>
+                                    About</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#speakers"
+                                    ><i
+                                        class="fas fa-chevron-right"
+                                        style="font-size: 0.6rem"
+                                    ></i>
+                                    Speakers</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#registration"
+                                    ><i
+                                        class="fas fa-chevron-right"
+                                        style="font-size: 0.6rem"
+                                    ></i>
+                                    Registration</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#abstracts"
+                                    ><i
+                                        class="fas fa-chevron-right"
+                                        style="font-size: 0.6rem"
+                                    ></i>
+                                    Abstracts</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#venue"
+                                    ><i
+                                        class="fas fa-chevron-right"
+                                        style="font-size: 0.6rem"
+                                    ></i>
+                                    Venue</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#committee"
+                                    ><i
+                                        class="fas fa-chevron-right"
+                                        style="font-size: 0.6rem"
+                                    ></i>
+                                    Committee</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact Us</h4>
+                        <p>
+                            <i
+                                class="fas fa-phone-alt"
+                                style="
+                                    color: var(--color-accent);
+                                    margin-right: 0.5rem;
+                                "
+                            ></i>
+                            Dr. Kartikay Saxena:
+                            <a href="tel:+918469991182">8469991182</a>
+                        </p>
+                        <p>
+                            <i
+                                class="fas fa-phone-alt"
+                                style="
+                                    color: var(--color-accent);
+                                    margin-right: 0.5rem;
+                                "
+                            ></i>
+                            Dr. Zainul Abedeen:
+                            <a href="tel:+918117161306">8117161306</a>
+                        </p>
+                        <p style="margin-top: 0.8rem">
+                            <i
+                                class="fas fa-envelope"
+                                style="
+                                    color: var(--color-accent);
+                                    margin-right: 0.5rem;
+                                "
+                            ></i>
+                            <a href="mailto:icetcd2026@tmu.ac.in"
+                                >icetcd2026@tmu.ac.in</a
+                            >
+                        </p>
+                        <p>
+                            <i
+                                class="fas fa-globe"
+                                style="
+                                    color: var(--color-accent);
+                                    margin-right: 0.5rem;
+                                "
+                            ></i>
+                            <a href="https://www.tmu.ac.in" target="_blank"
+                                >www.tmu.ac.in</a
+                            >
+                        </p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>
+                        &copy; 2026 ICETCD – Teerthanker Mahaveer University.
+                        All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Back to Top -->
+        <button id="back-to-top" aria-label="Back to Top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <!-- Floating Submit Abstract Button -->
+        <button
+            class="floating-btn"
+            onclick="openModal('abstract-modal')"
+            id="floating-abstract"
+        >
+            <i class="fas fa-file-alt"></i> Submit Abstract
+        </button>
+
+        <!-- ========== REGISTRATION MODAL ========== -->
+        <div class="modal-overlay" id="register-modal">
+            <div class="modal" style="position: relative">
+                <button
+                    class="modal-close"
+                    onclick="closeModal('register-modal')"
+                >
+                    <i class="fas fa-times"></i>
+                </button>
+                <h2>
+                    <i
+                        class="fas fa-user-plus"
+                        style="color: var(--color-accent); margin-right: 0.5rem"
+                    ></i>
+                    Register for ICETCD 2026
+                </h2>
+                <form
+                    onsubmit="
+                        event.preventDefault();
+                        alert(
+                            'Registration submitted successfully! We will contact you shortly.',
+                        );
+                        closeModal('register-modal');
+                    "
+                >
+                    <div class="form-group">
+                        <label>Full Name *</label
+                        ><input
+                            type="text"
+                            required
+                            placeholder="Enter your full name"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address *</label
+                        ><input
+                            type="email"
+                            required
+                            placeholder="your@email.com"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number *</label
+                        ><input
+                            type="tel"
+                            required
+                            placeholder="+91 XXXXX XXXXX"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Category *</label>
+                        <select required>
+                            <option value="">Select Category</option>
+                            <option>PG Student</option>
+                            <option>Faculty / Practitioner</option>
+                            <option>UG Student</option>
+                            <option>Accompanying Person</option>
+                            <option>International Delegate</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Institution / Affiliation</label
+                        ><input
+                            type="text"
+                            placeholder="Your university or clinic"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Mode</label>
+                        <select>
+                            <option>Online Transfer (NEFT/RTGS)</option>
+                            <option>UPI</option>
+                            <option>On-Spot Payment</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-paper-plane"></i> Submit Registration
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- ========== ABSTRACT MODAL ========== -->
+        <div class="modal-overlay" id="abstract-modal">
+            <div class="modal" style="position: relative">
+                <button
+                    class="modal-close"
+                    onclick="closeModal('abstract-modal')"
+                >
+                    <i class="fas fa-times"></i>
+                </button>
+                <h2>
+                    <i
+                        class="fas fa-file-alt"
+                        style="color: var(--color-accent); margin-right: 0.5rem"
+                    ></i>
+                    Submit Abstract
+                </h2>
+                <form
+                    onsubmit="
+                        event.preventDefault();
+                        alert(
+                            'Abstract submitted successfully! You will receive confirmation via email.',
+                        );
+                        closeModal('abstract-modal');
+                    "
+                >
+                    <div class="form-group">
+                        <label>Author Name *</label
+                        ><input
+                            type="text"
+                            required
+                            placeholder="First & Last Name"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Email *</label
+                        ><input
+                            type="email"
+                            required
+                            placeholder="your@email.com"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Presentation Type *</label>
+                        <select required>
+                            <option value="">Select Type</option>
+                            <option>Scientific Paper (Oral)</option>
+                            <option>Poster Presentation</option>
+                            <option>Theme-Based Poster</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Paper Title *</label
+                        ><input
+                            type="text"
+                            required
+                            placeholder="Title of your paper / poster"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Abstract (max 250 words) *</label
+                        ><textarea
+                            rows="5"
+                            required
+                            placeholder="Write your abstract here..."
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-upload"></i> Submit Abstract
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- ========== SCRIPTS ========== -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
