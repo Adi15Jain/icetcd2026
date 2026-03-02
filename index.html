@@ -80,83 +80,66 @@
         </nav>
 
         <!-- Hero Section -->
-        <section id="hero">
+        <section id="hero" class="hero-premium">
             <canvas id="hero-canvas"></canvas>
-            <div class="hero-overlay"></div>
-            <div class="hero-content" id="hero-content">
-                <!-- Left Column: Badge + Title -->
-                <div class="hero-left">
-                    <div class="hero-badge hero-anim" data-delay="0.4">
-                        <span class="hero-badge-dot"></span>
-                        International Conference
-                    </div>
-                    <h1 class="hero-title hero-anim" data-delay="0.6">
-                        <span class="accent">Emerging <br />Trends</span>
-                        <span>in</span>
-                        Contemporary Dentistry
-                    </h1>
-                    <p class="hero-conf-name hero-anim" data-delay="0.85">
-                        (ICETCD-2026)
-                    </p>
+            <div class="hero-premium-overlay"></div>
+            <div class="hero-premium-content" id="hero-content">
+                <div class="hero-badge hero-anim" data-delay="0.2">
+                    <span class="hero-badge-dot"></span>
+                    International Conference
                 </div>
-                <!-- Right Column: Info Cards + CTAs -->
-                <div class="hero-right">
-                    <div class="hero-info-card hero-anim" data-delay="0.7">
-                        <div class="hero-info-icon">
-                            <i class="fas fa-university"></i>
-                        </div>
-                        <div class="hero-info-text">
-                            <span class="hero-info-label">Organised By</span>
-                            <span class="hero-info-value"
-                                >Department of Dental Sciences, TMU</span
-                            >
-                        </div>
+
+                <h1 class="hero-title-premium hero-anim" data-delay="0.4">
+                    Emerging Trends in<br />
+                    <span class="accent-gradient">Contemporary Dentistry</span>
+                </h1>
+
+                <p class="hero-subtitle-premium hero-anim" data-delay="0.6">
+                    (ICETCD-2026)
+                </p>
+
+                <div class="hero-details-row hero-anim" data-delay="0.8">
+                    <div class="detail-item">
+                        <i class="fas fa-university"></i>
+                        <span>Department of Dental Sciences, TMU</span>
                     </div>
-                    <div class="hero-info-card hero-anim" data-delay="0.85">
-                        <div class="hero-info-icon">
-                            <i class="fas fa-calendar-alt"></i>
-                        </div>
-                        <div class="hero-info-text">
-                            <span class="hero-info-label">Date</span>
-                            <span class="hero-info-value"
-                                >10th – 11th April 2026</span
-                            >
-                        </div>
+                    <span class="detail-separator"></span>
+                    <div class="detail-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>10th – 11th April 2026</span>
                     </div>
-                    <div class="hero-info-card hero-anim" data-delay="1.0">
-                        <div class="hero-info-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="hero-info-text">
-                            <span class="hero-info-label">Venue</span>
-                            <span class="hero-info-value">TMU, Moradabad</span>
-                        </div>
+                    <span class="detail-separator"></span>
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>TMU, Moradabad</span>
                     </div>
-                    <div class="hero-btns hero-anim" data-delay="1.15">
-                        <a
-                            href="#registration"
-                            class="btn-primary"
-                            onclick="openModal('register-modal')"
-                        >
-                            Register Now
-                        </a>
-                        <a
-                            href="#abstracts"
-                            class="btn-outline"
-                            onclick="openModal('abstract-modal')"
-                        >
-                            Submit Abstract
-                        </a>
-                    </div>
+                </div>
+
+                <div class="hero-ctas-premium hero-anim" data-delay="1.0">
+                    <a
+                        href="#registration"
+                        class="btn-premium-primary"
+                        onclick="openModal('register-modal')"
+                    >
+                        Register Now
+                    </a>
+                    <a
+                        href="#abstracts"
+                        class="btn-premium-secondary"
+                        onclick="openModal('abstract-modal')"
+                    >
+                        Submit Abstract
+                    </a>
                 </div>
             </div>
+
             <!-- Scroll Indicator -->
-            <div class="scroll-indicator hero-anim" data-delay="1.5">
+            <!-- <div class="scroll-indicator hero-anim" data-delay="1.4">
                 <div class="scroll-line">
                     <div class="scroll-dot"></div>
                 </div>
                 <span class="scroll-text">Scroll</span>
-            </div>
+            </div> -->
         </section>
 
         <!-- ========== ABOUT THE CONFERENCE ========== -->
@@ -298,9 +281,9 @@
                         <div class="speaker-photo-ring"></div>
                         <div class="speaker-photo">
                             <img
-                                src=""
+                                src="https://cdn.jsdelivr.net/gh/Adi15Jain/assets@main/icetcd/noratikah_haysim.png"
                                 alt="Noratikah binti Awang Hasyim"
-                                class="fas"
+                                class="speaker-img"
                             />
                         </div>
                     </div>
@@ -934,10 +917,9 @@
                             </div>
                         </div>
                         <div
-                            class="comm-portrait comm-portrait-blue comm-anim"
+                            class="comm-portrait comm-portrait-blue comm-anim patron-card-offset"
                             data-delay="0.3"
                             data-tilt-comm
-                            style="margin-left: 2rem"
                         >
                             <div class="comm-card-glow"></div>
                             <img
@@ -1465,6 +1447,6 @@
 
         <!-- ========== SCRIPTS ========== -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-        <script type="module" src="script.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
