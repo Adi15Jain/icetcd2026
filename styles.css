@@ -4021,14 +4021,21 @@ h6 {
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 1024px) {
+    .hero-content {
+        padding: 6rem 3rem 4rem 3rem;
+        gap: 2rem;
+    }
+    .hero-right {
+        width: 400px;
+    }
     .venue-gallery {
         grid-template-columns: repeat(2, 1fr);
     }
-
     .footer-grid {
         grid-template-columns: 1fr;
     }
 }
+
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -4057,9 +4064,41 @@ h6 {
         margin-top: 1rem;
     }
 
-    .hero-title {
-        font-size: clamp(1.5rem, 5vw, 2.5rem);
+    /* Hero Responsive */
+    .hero-content {
+        flex-direction: column;
+        padding: 5rem 2rem 3rem 2rem;
+        text-align: center;
+        align-items: center;
     }
+    .hero-left {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+    .hero-right {
+        width: 100%;
+        max-width: 100%;
+        align-items: stretch;
+    }
+    .hero-badge {
+        margin: 0 auto 1.5rem auto;
+    }
+    .hero-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+    .hero-btns {
+        flex-direction: column;
+        width: 100%;
+    }
+    .btn-primary,
+    .btn-outline {
+        width: 100%;
+    }
+
+    /* General layout adjustments */
     .section {
         padding: 3.5rem 0;
     }
@@ -4071,15 +4110,20 @@ h6 {
         grid-template-columns: 1fr 1fr;
     }
 }
+
 @media (max-width: 480px) {
+    .hero-content {
+        padding: 5rem 1.5rem 2rem 1.5rem;
+    }
     .venue-gallery {
         grid-template-columns: 1fr;
     }
-    .hero-meta {
+    .hero-info-card {
         flex-direction: column;
-        gap: 0.8rem;
+        text-align: center;
+        gap: 0.5rem;
     }
-    .award-badges {
+    .cfa-award-badges {
         flex-direction: column;
         align-items: center;
     }
