@@ -5352,17 +5352,32 @@ h6 {
     .guide-section {
         padding: 6vh 4vw 8vh;
     }
+    /* Compact centered flex-wrap — stays as pills like desktop */
     .guide-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 0.4rem;
     }
-    .guide-tab span {
-        display: none;
+    .guide-tab:last-child {
+        grid-column: unset;
     }
     .guide-tab {
-        padding: 0.65rem 0.9rem;
+        flex-direction: row;
+        gap: 0.35rem;
+        padding: 0.42rem 0.85rem;
+        border-radius: 50px;
+        font-size: 0.72rem;
+        line-height: 1;
+        text-align: left;
+    }
+    /* Show text labels */
+    .guide-tab span {
+        display: inline;
+        white-space: nowrap;
     }
     .guide-tab i {
-        font-size: 1rem;
+        font-size: 0.72rem;
     }
     .guide-mode-row {
         grid-template-columns: 1fr;
