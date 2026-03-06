@@ -2317,6 +2317,31 @@ h6 {
 .reg-cta {
     text-align: center;
 }
+/* Register button — base styles (no framework override) */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.95rem 2.4rem;
+    border: none;
+    border-radius: 50px;
+    background: var(--gradient-accent);
+    color: #fff;
+    font-family: "Outfit", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.35s var(--ease-premium);
+    box-shadow: 0 4px 20px var(--color-accent-glow);
+    letter-spacing: 0.01em;
+}
+.btn-primary:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 30px var(--color-accent-glow);
+}
+.btn-primary:active {
+    transform: translateY(-1px) scale(0.99);
+}
 
 /* --- Entrance animations --- */
 .reg-anim {
@@ -4144,8 +4169,43 @@ h6 {
     }
 }
 
+/* ── Hamburger nav — activate at 1100px to cover iPad landscape ── */
+@media (max-width: 1100px) {
+    .hamburger {
+        display: flex;
+    }
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 72%;
+        max-width: 320px;
+        height: 100vh;
+        background: rgba(0, 16, 85, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 5rem 2rem;
+        gap: 0.5rem;
+        transition: right 0.4s var(--ease-premium);
+        z-index: 9998;
+    }
+    .nav-menu.open {
+        right: 0;
+    }
+    .nav-menu a {
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+    }
+    .nav-cta {
+        margin-top: 1rem;
+        font-size: clamp(0.8rem, 3.5vw, 0.95rem) !important;
+        padding: 0.5rem 1.2rem !important;
+    }
+}
+
 @media (max-width: 768px) {
     .hamburger {
+        /* hamburger already shown at 1100px; confirm visible here too */
         display: flex;
     }
     .footer {
@@ -4256,6 +4316,8 @@ h6 {
         width: 100%;
         padding: clamp(0.8rem, 1.8vh, 1.2rem) 4vw;
         font-size: clamp(0.85rem, 4vw, 1.1rem);
+        justify-content: center;
+        text-align: center;
     }
 
     .floating-btn {
@@ -4309,56 +4371,145 @@ h6 {
 /* ========== AUTHOR GUIDELINES SECTION ========== */
 .guide-section {
     position: relative;
-    padding: 8vh 5vw 10vh;
-    background: linear-gradient(160deg, #f0f4ff 0%, #fef9ff 50%, #fff8f0 100%);
+    padding: 6vh 5vw 8vh;
+    background:
+        /* strong orange radial top-right */
+        radial-gradient(
+            ellipse 65% 55% at 95% 0%,
+            rgba(255, 121, 0, 0.14) 0%,
+            transparent 55%
+        ),
+        /* warm amber mid-right */
+        radial-gradient(
+                ellipse 45% 40% at 80% 60%,
+                rgba(255, 179, 107, 0.1) 0%,
+                transparent 55%
+            ),
+        /* soft blue bottom-left counterbalance */
+        radial-gradient(
+                ellipse 60% 50% at 6% 95%,
+                rgba(59, 130, 246, 0.09) 0%,
+                transparent 55%
+            ),
+        /* pearl base */
+        linear-gradient(155deg, #fffaf6 0%, #fff7f0 40%, #fdf9ff 100%);
     overflow: hidden;
     min-height: 100vh;
 }
 
-/* Floating background shapes */
+/* Fine dot grid */
+.guide-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+        circle,
+        rgba(255, 121, 0, 0.06) 1px,
+        transparent 1px
+    );
+    background-size: 28px 28px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Decorative arc / ring shapes */
+.guide-section::after {
+    content: "";
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    border: 60px solid rgba(255, 121, 0, 0.07);
+    pointer-events: none;
+    z-index: 0;
+    animation: guideRing 16s ease-in-out infinite alternate;
+}
+@keyframes guideRing {
+    from {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.7;
+    }
+    to {
+        transform: scale(1.1) rotate(15deg);
+        opacity: 1;
+    }
+}
+
+/* Extra decorative rings via pseudo on container */
+.guide-deco {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+.guide-deco-1 {
+    width: 320px;
+    height: 320px;
+    border: 40px solid rgba(255, 121, 0, 0.05);
+    bottom: -80px;
+    left: -80px;
+    animation: guideRing 20s 3s ease-in-out infinite alternate-reverse;
+}
+.guide-deco-2 {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(
+        circle,
+        rgba(255, 121, 0, 0.08),
+        transparent 70%
+    );
+    filter: blur(30px);
+    top: 38%;
+    left: 52%;
+    animation: floatDrift 18s 5s ease-in-out infinite alternate;
+}
+
+/* Floating blobs — warm orange palette */
 .guide-float {
     position: absolute;
     border-radius: 50%;
-    filter: blur(60px);
-    opacity: 0.35;
+    filter: blur(70px);
+    opacity: 0.22;
     pointer-events: none;
     animation: floatDrift 14s ease-in-out infinite alternate;
 }
 .guide-float-1 {
-    width: 420px;
-    height: 420px;
+    width: 460px;
+    height: 460px;
     background: radial-gradient(
         circle,
-        rgba(99, 102, 241, 0.4),
+        rgba(255, 121, 0, 0.45),
         transparent 70%
     );
     top: -100px;
-    left: -120px;
+    right: -120px;
     animation-delay: 0s;
 }
 .guide-float-2 {
-    width: 300px;
-    height: 300px;
+    width: 320px;
+    height: 320px;
     background: radial-gradient(
         circle,
-        rgba(245, 158, 11, 0.35),
+        rgba(255, 179, 107, 0.4),
         transparent 70%
     );
-    bottom: 10%;
-    right: -80px;
-    animation-delay: 3s;
+    bottom: 6%;
+    left: -80px;
+    animation-delay: 4s;
 }
 .guide-float-3 {
-    width: 250px;
-    height: 250px;
+    width: 220px;
+    height: 220px;
     background: radial-gradient(
         circle,
-        rgba(16, 185, 129, 0.25),
+        rgba(59, 130, 246, 0.18),
         transparent 70%
     );
     top: 50%;
-    left: 40%;
-    animation-delay: 6s;
+    left: 46%;
+    animation-delay: 8s;
 }
 
 /* Container */
@@ -4366,22 +4517,18 @@ h6 {
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
-    z-index: 1;
+    z-index: 1; /* above the ::before dot-grid and ::after aurora */
 }
 
 /* Header */
 .guide-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 .guide-badge {
-    background: linear-gradient(
-        135deg,
-        rgba(99, 102, 241, 0.12),
-        rgba(139, 92, 246, 0.08)
-    );
-    color: #6366f1;
-    border: 1px solid rgba(99, 102, 241, 0.25);
+    background: rgba(255, 121, 0, 0.08);
+    color: #c45200;
+    border: 1px solid rgba(255, 121, 0, 0.22);
 }
 .guide-title {
     font-family: "Outfit", sans-serif;
@@ -4394,8 +4541,8 @@ h6 {
 .guide-title-line {
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #6366f1, #a855f7, #f59e0b);
-    margin: 0 auto 1rem;
+    background: linear-gradient(90deg, #ff7900, #ffb36b);
+    margin: 0 auto 0.8rem;
     border-radius: 2px;
 }
 .guide-subtitle {
@@ -4407,41 +4554,41 @@ h6 {
 /* ── Tab Nav ── */
 .guide-tabs {
     display: flex;
-    gap: 0.6rem;
+    gap: 0.45rem;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
 .guide-tab {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.65rem 1.35rem;
+    gap: 0.45rem;
+    padding: 0.55rem 1.15rem;
     border-radius: 50px;
-    border: 1.5px solid rgba(99, 102, 241, 0.2);
-    background: rgba(255, 255, 255, 0.6);
+    border: 1.5px solid rgba(255, 121, 0, 0.18);
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
     color: var(--color-text-secondary);
     font-family: "Space Grotesk", sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s var(--ease-premium);
 }
 .guide-tab i {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
 }
 .guide-tab:hover {
-    border-color: rgba(99, 102, 241, 0.5);
-    color: #6366f1;
-    background: rgba(99, 102, 241, 0.06);
+    border-color: rgba(255, 121, 0, 0.45);
+    color: #c45200;
+    background: rgba(255, 121, 0, 0.06);
     transform: translateY(-2px);
 }
 .guide-tab.active {
-    background: linear-gradient(135deg, #6366f1, #a855f7);
+    background: linear-gradient(135deg, #ff7900, #ffb36b);
     border-color: transparent;
     color: #fff;
-    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.35);
+    box-shadow: 0 6px 20px rgba(255, 121, 0, 0.32);
 }
 
 /* ── Panels ── */
@@ -4468,55 +4615,55 @@ h6 {
 .guide-panel-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    gap: 1.2rem;
 }
 .guide-info-card {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.72);
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 20px;
-    padding: 1.8rem 2rem;
-    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.06);
+    border: 1px solid rgba(255, 121, 0, 0.1);
+    border-radius: 16px;
+    padding: 1.4rem 1.6rem;
+    box-shadow: 0 4px 20px rgba(255, 121, 0, 0.05);
     transition:
         transform 0.35s var(--ease-premium),
         box-shadow 0.35s var(--ease-premium);
 }
 .guide-info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 32px rgba(99, 102, 241, 0.12);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(255, 121, 0, 0.11);
 }
 .guide-info-card--wide {
     grid-column: 1 / -1;
 }
 .guide-card-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #6366f1, #a855f7);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ff7900, #ffb36b);
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 4px 14px rgba(255, 121, 0, 0.3);
 }
 .guide-card-icon--gold {
-    background: linear-gradient(135deg, #f59e0b, #ef4444);
-    box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+    background: linear-gradient(135deg, #ff7900, #ef4444);
+    box-shadow: 0 4px 14px rgba(255, 121, 0, 0.35);
 }
 .guide-info-card h3 {
     font-family: "Outfit", sans-serif;
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--color-primary);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.6rem;
 }
 .guide-info-card p {
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     color: var(--color-text-secondary);
-    line-height: 1.65;
-    margin-bottom: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
 }
 
 /* Email button */
@@ -4524,21 +4671,21 @@ h6 {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.6rem 1.2rem;
+    padding: 0.55rem 1.1rem;
     border-radius: 50px;
-    background: linear-gradient(135deg, #6366f1, #a855f7);
+    background: linear-gradient(135deg, #ff7900, #ffb36b);
     color: #fff;
     font-size: 0.82rem;
     font-weight: 600;
     font-family: "Space Grotesk", sans-serif;
     text-decoration: none;
     transition: all 0.3s var(--ease-premium);
-    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 4px 14px rgba(255, 121, 0, 0.28);
     word-break: break-all;
 }
 .guide-email-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(99, 102, 241, 0.45);
+    box-shadow: 0 8px 22px rgba(255, 121, 0, 0.42);
 }
 
 /* List */
@@ -4546,8 +4693,9 @@ h6 {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.55rem;
+    gap: 0.5rem;
     margin: 0;
+    padding: 0;
 }
 .guide-list li {
     display: flex;
@@ -4555,78 +4703,135 @@ h6 {
     gap: 0.6rem;
     font-size: 0.88rem;
     color: var(--color-text-secondary);
-    line-height: 1.55;
+    line-height: 1.6;
+    /* allow text + strong to wrap naturally within the flex item */
+    flex-wrap: wrap;
+    /* keep the icon anchored, let text flow */
+    align-items: baseline;
 }
-.guide-list li i {
-    color: #6366f1;
-    font-size: 0.8rem;
-    margin-top: 0.15rem;
+/* The icon inside a list item must not shrink or wrap */
+.guide-list li > i.fas,
+.guide-list li > i.far,
+.guide-list li > i.fab {
+    color: #ff7900;
+    font-size: 0.78rem;
     flex-shrink: 0;
+    margin-top: 0.18rem;
+    /* prevent it from participating in wrap */
+    align-self: flex-start;
+}
+.guide-list li strong {
+    /* inline-block ensures bold text stays in the text flow */
+    display: inline;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+/* Span wrapper takes all remaining width */
+.guide-list li > span {
+    flex: 1;
+    min-width: 0;
 }
 .guide-list--numbered {
     list-style: none;
     counter-reset: guide-counter;
+    gap: 0.6rem;
 }
 .guide-list--numbered li {
     counter-increment: guide-counter;
+    display: flex;
     align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.88rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    /* important: don't wrap the whole flex row */
+    flex-wrap: nowrap;
 }
+/* The number badge is an inline-block pseudo, fixed size */
 .guide-list--numbered li::before {
     content: counter(guide-counter);
-    background: linear-gradient(135deg, #6366f1, #a855f7);
+    background: linear-gradient(135deg, #ff7900, #ffb36b);
     color: #fff;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    min-width: 22px;
-    height: 22px;
+    min-width: 20px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    margin-top: 0.1rem;
+    margin-top: 0.18rem;
+    /* force it to not be a block */
+    float: none;
+}
+/* Wrap the text portion naturally */
+.guide-list--numbered li > *,
+.guide-list--numbered li::after {
+    flex: 1;
+    min-width: 0;
 }
 
-/* Note */
+/* Note — used in pub cards; icon stays left, text wraps */
 .guide-note {
-    margin-top: 1rem;
+    margin-top: 0.75rem;
     font-size: 0.82rem;
     color: var(--color-text-muted);
     display: flex;
     align-items: flex-start;
     gap: 0.5rem;
+    flex-wrap: wrap;
+    line-height: 1.6;
 }
 .guide-note i {
-    color: #6366f1;
-    margin-top: 0.15rem;
+    color: #ff7900;
+    margin-top: 0.18rem;
+    flex-shrink: 0;
+}
+/* Ensure the text after the icon fills remaining space */
+.guide-note > i + * {
+    flex: 1;
+    min-width: 0;
+}
+/* Plain note text (no icon) — keeps strong inline */
+.guide-note-text {
+    margin-top: 0.75rem;
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+.guide-note-text strong {
+    font-weight: 700;
+    color: var(--color-primary);
 }
 
 /* Steps */
 .guide-steps {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.2rem;
-    margin-top: 0.5rem;
+    gap: 1rem;
+    margin-top: 0.4rem;
 }
 .guide-step {
     display: flex;
-    gap: 1rem;
+    gap: 0.85rem;
     align-items: flex-start;
 }
 .guide-step-num {
-    width: 34px;
-    height: 34px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #6366f1, #a855f7);
+    background: linear-gradient(135deg, #ff7900, #ffb36b);
     color: #fff;
     font-family: "Outfit", sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 800;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    box-shadow: 0 3px 10px rgba(99, 102, 241, 0.35);
+    box-shadow: 0 3px 10px rgba(255, 121, 0, 0.32);
 }
 .guide-step-body h4 {
     font-family: "Outfit", sans-serif;
@@ -4653,26 +4858,18 @@ h6 {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    padding: 0.4rem 0.9rem;
+    padding: 0.35rem 0.8rem;
     border-radius: 50px;
-    background: linear-gradient(
-        135deg,
-        rgba(99, 102, 241, 0.1),
-        rgba(168, 85, 247, 0.07)
-    );
-    border: 1px solid rgba(99, 102, 241, 0.2);
-    color: #6366f1;
-    font-size: 0.8rem;
+    background: rgba(255, 121, 0, 0.07);
+    border: 1px solid rgba(255, 121, 0, 0.18);
+    color: #c45200;
+    font-size: 0.78rem;
     font-weight: 600;
     font-family: "Space Grotesk", sans-serif;
     transition: all 0.25s ease;
 }
 .guide-chip:hover {
-    background: linear-gradient(
-        135deg,
-        rgba(99, 102, 241, 0.18),
-        rgba(168, 85, 247, 0.14)
-    );
+    background: rgba(255, 121, 0, 0.14);
     transform: translateY(-2px);
 }
 
@@ -4680,53 +4877,53 @@ h6 {
 .guide-dates-wrap {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    max-width: 600px;
+    gap: 1.2rem;
+    max-width: 580px;
     margin: 0 auto;
     align-items: center;
 }
 .guide-date-card {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.2rem;
     width: 100%;
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.85);
-    border-radius: 20px;
-    padding: 1.8rem 2rem;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(255, 121, 0, 0.1);
+    border-radius: 16px;
+    padding: 1.4rem 1.6rem;
     backdrop-filter: blur(16px);
-    box-shadow: 0 4px 18px rgba(99, 102, 241, 0.07);
+    box-shadow: 0 4px 18px rgba(255, 121, 0, 0.05);
     transition:
         transform 0.3s var(--ease-premium),
         box-shadow 0.3s var(--ease-premium);
 }
 .guide-date-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.13);
+    box-shadow: 0 10px 28px rgba(255, 121, 0, 0.11);
 }
 .guide-date-card--highlight {
-    border-color: rgba(245, 158, 11, 0.35);
-    box-shadow: 0 6px 22px rgba(245, 158, 11, 0.12);
+    border-color: rgba(255, 121, 0, 0.3);
+    box-shadow: 0 6px 22px rgba(255, 121, 0, 0.1);
 }
 .guide-date-card--highlight:hover {
-    box-shadow: 0 14px 36px rgba(245, 158, 11, 0.2);
+    box-shadow: 0 14px 36px rgba(255, 121, 0, 0.18);
 }
 .guide-date-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
-    background: linear-gradient(135deg, #6366f1, #a855f7);
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff7900, #ffb36b);
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     flex-shrink: 0;
-    box-shadow: 0 5px 16px rgba(99, 102, 241, 0.35);
+    box-shadow: 0 5px 16px rgba(255, 121, 0, 0.32);
 }
 .guide-date-card--highlight .guide-date-icon {
-    background: linear-gradient(135deg, #f59e0b, #ef4444);
-    box-shadow: 0 5px 16px rgba(245, 158, 11, 0.4);
+    background: linear-gradient(135deg, #ff7900, #ef4444);
+    box-shadow: 0 5px 16px rgba(255, 121, 0, 0.4);
 }
 .guide-date-body {
     display: flex;
@@ -4749,7 +4946,7 @@ h6 {
     letter-spacing: -0.5px;
 }
 .guide-date-card--highlight .guide-date-value {
-    color: #d97706;
+    color: #c45200;
 }
 .guide-date-sub {
     font-size: 0.82rem;
@@ -4764,12 +4961,12 @@ h6 {
 }
 
 .guide-rules-card {
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.85);
-    border-radius: 20px;
-    padding: 2rem 2.2rem;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(255, 121, 0, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem 1.8rem;
     backdrop-filter: blur(16px);
-    box-shadow: 0 4px 18px rgba(99, 102, 241, 0.06);
+    box-shadow: 0 4px 18px rgba(255, 121, 0, 0.04);
 }
 .guide-rules-card h3 {
     font-family: "Outfit", sans-serif;
@@ -4782,7 +4979,7 @@ h6 {
     gap: 0.6rem;
 }
 .guide-rules-card h3 i {
-    color: #6366f1;
+    color: #ff7900;
 }
 
 .guide-format-heading {
@@ -4796,7 +4993,7 @@ h6 {
     margin-bottom: 1rem;
 }
 .guide-format-heading i {
-    color: #6366f1;
+    color: #ff7900;
 }
 
 /* Accordion */
@@ -4806,15 +5003,15 @@ h6 {
     gap: 0.7rem;
 }
 .guide-acc-item {
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.85);
-    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(255, 121, 0, 0.1);
+    border-radius: 12px;
     backdrop-filter: blur(12px);
     overflow: hidden;
     transition: box-shadow 0.3s ease;
 }
 .guide-acc-item:hover {
-    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.1);
+    box-shadow: 0 6px 20px rgba(255, 121, 0, 0.09);
 }
 
 .guide-acc-trigger {
@@ -4839,13 +5036,13 @@ h6 {
     gap: 0.6rem;
 }
 .guide-acc-trigger span i {
-    color: #6366f1;
+    color: #ff7900;
 }
 .guide-acc-trigger:hover {
-    background: rgba(99, 102, 241, 0.04);
+    background: rgba(255, 121, 0, 0.04);
 }
 .guide-acc-trigger.open {
-    color: #6366f1;
+    color: #c45200;
 }
 
 .guide-acc-arrow {
@@ -4856,7 +5053,7 @@ h6 {
 }
 .guide-acc-trigger.open .guide-acc-arrow {
     transform: rotate(180deg);
-    color: #6366f1;
+    color: #ff7900;
 }
 
 .guide-acc-body {
@@ -4890,18 +5087,18 @@ h6 {
 }
 .guide-pres-card {
     background: rgba(255, 255, 255, 0.72);
-    border: 1px solid rgba(255, 255, 255, 0.85);
-    border-radius: 22px;
+    border: 1px solid rgba(255, 121, 0, 0.1);
+    border-radius: 18px;
     backdrop-filter: blur(16px);
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     transition:
         transform 0.35s var(--ease-premium),
         box-shadow 0.35s var(--ease-premium);
 }
 .guide-pres-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 14px 36px rgba(99, 102, 241, 0.12);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(255, 121, 0, 0.1);
 }
 
 .guide-pres-header {
@@ -4913,25 +5110,25 @@ h6 {
 .guide-pres-header--paper {
     background: linear-gradient(
         135deg,
-        rgba(99, 102, 241, 0.12),
-        rgba(168, 85, 247, 0.08)
+        rgba(255, 121, 0, 0.1),
+        rgba(255, 179, 107, 0.07)
     );
-    border-bottom: 1px solid rgba(99, 102, 241, 0.15);
+    border-bottom: 1px solid rgba(255, 121, 0, 0.14);
 }
 .guide-pres-header--poster {
     background: linear-gradient(
         135deg,
-        rgba(16, 185, 129, 0.12),
-        rgba(5, 150, 105, 0.08)
+        rgba(255, 121, 0, 0.07),
+        rgba(251, 146, 60, 0.05)
     );
-    border-bottom: 1px solid rgba(16, 185, 129, 0.15);
+    border-bottom: 1px solid rgba(255, 121, 0, 0.1);
 }
 .guide-pres-header i {
-    font-size: 1.5rem;
-    color: #6366f1;
+    font-size: 1.4rem;
+    color: #ff7900;
 }
 .guide-pres-header--poster i {
-    color: #10b981;
+    color: #ffb36b;
 }
 .guide-pres-header h3 {
     font-family: "Outfit", sans-serif;
@@ -4942,20 +5139,20 @@ h6 {
 .guide-time-badge {
     display: inline-flex;
     flex-direction: column;
-    padding: 0.5rem 0.9rem;
-    background: rgba(255, 255, 255, 0.7);
+    padding: 0.45rem 0.85rem;
+    background: rgba(255, 255, 255, 0.75);
     border-radius: 10px;
     font-family: "Space Grotesk", sans-serif;
-    font-size: 0.83rem;
+    font-size: 0.82rem;
     font-weight: 700;
-    color: #6366f1;
-    border: 1px solid rgba(99, 102, 241, 0.2);
+    color: #c45200;
+    border: 1px solid rgba(255, 121, 0, 0.2);
     align-self: flex-start;
     gap: 0.2rem;
 }
 .guide-pres-header--poster .guide-time-badge {
-    color: #10b981;
-    border-color: rgba(16, 185, 129, 0.25);
+    color: #c45200;
+    border-color: rgba(255, 121, 0, 0.2);
 }
 .guide-time-breakdown {
     font-size: 0.73rem;
@@ -4964,7 +5161,7 @@ h6 {
 }
 
 .guide-pres-body {
-    padding: 1.5rem 2rem 2rem;
+    padding: 1.2rem 1.6rem 1.6rem;
 }
 
 .guide-mode-row {
@@ -4974,17 +5171,17 @@ h6 {
     margin-bottom: 1.5rem;
 }
 .guide-mode-box {
-    background: rgba(245, 247, 255, 0.7);
-    border-radius: 12px;
-    padding: 1rem 1.1rem;
-    border: 1px solid rgba(99, 102, 241, 0.12);
+    background: rgba(255, 248, 242, 0.8);
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(255, 121, 0, 0.1);
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
+    gap: 0.3rem;
 }
 .guide-mode-box i {
-    font-size: 1.1rem;
-    color: #6366f1;
+    font-size: 1rem;
+    color: #ff7900;
 }
 .guide-mode-box strong {
     font-size: 0.88rem;
@@ -5008,7 +5205,7 @@ h6 {
     gap: 0.5rem;
 }
 .guide-slide-heading i {
-    color: #6366f1;
+    color: #ff7900;
 }
 .guide-slide-heading small {
     font-size: 0.75rem;
@@ -5024,21 +5221,21 @@ h6 {
 .guide-slide-item {
     display: flex;
     align-items: center;
-    gap: 0.9rem;
-    padding: 0.55rem 0.9rem;
-    border-radius: 10px;
-    background: rgba(99, 102, 241, 0.04);
-    border: 1px solid rgba(99, 102, 241, 0.08);
-    font-size: 0.84rem;
+    gap: 0.8rem;
+    padding: 0.5rem 0.85rem;
+    border-radius: 9px;
+    background: rgba(255, 121, 0, 0.04);
+    border: 1px solid rgba(255, 121, 0, 0.08);
+    font-size: 0.83rem;
     color: var(--color-text-secondary);
 }
 .guide-slide-num {
-    min-width: 32px;
-    padding: 0.25rem 0.4rem;
+    min-width: 30px;
+    padding: 0.2rem 0.35rem;
     border-radius: 6px;
-    background: linear-gradient(135deg, #6366f1, #a855f7);
+    background: linear-gradient(135deg, #ff7900, #ffb36b);
     color: #fff;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 800;
     text-align: center;
     font-family: "Space Grotesk", sans-serif;
@@ -5056,26 +5253,26 @@ h6 {
     gap: 1.5rem;
 }
 .guide-pub-card {
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.85);
-    border-radius: 20px;
-    padding: 2rem 2.2rem;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(255, 121, 0, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem 1.8rem;
     backdrop-filter: blur(16px);
-    box-shadow: 0 4px 18px rgba(99, 102, 241, 0.06);
+    box-shadow: 0 4px 18px rgba(255, 121, 0, 0.04);
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.85rem;
     transition:
         transform 0.35s var(--ease-premium),
         box-shadow 0.35s var(--ease-premium);
 }
 .guide-pub-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 14px 34px rgba(99, 102, 241, 0.12);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(255, 121, 0, 0.1);
 }
 .guide-pub-card--awards {
-    border-color: rgba(245, 158, 11, 0.25);
-    box-shadow: 0 4px 18px rgba(245, 158, 11, 0.08);
+    border-color: rgba(255, 121, 0, 0.22);
+    box-shadow: 0 4px 18px rgba(255, 121, 0, 0.07);
 }
 .guide-pub-card h3 {
     font-family: "Outfit", sans-serif;
