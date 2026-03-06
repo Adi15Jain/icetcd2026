@@ -673,9 +673,54 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 })();
 
 /* ==========================================================================
-   WHY ATTEND SECTION — ENTRANCE ANIMATIONS + CARD TILT + GLOW
+   AUTHOR GUIDELINES SECTION — TABS + ACCORDION
    ========================================================================== */
 
+(function initGuideSection() {
+    /* ---- Tab switching ---- */
+    const tabs = document.querySelectorAll(".guide-tab");
+    const panels = document.querySelectorAll(".guide-panel");
+
+    tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+            const target = tab.dataset.tab;
+
+            tabs.forEach((t) => t.classList.remove("active"));
+            panels.forEach((p) => p.classList.remove("active"));
+
+            tab.classList.add("active");
+            const panel = document.getElementById("tab-" + target);
+            if (panel) panel.classList.add("active");
+        });
+    });
+
+    /* ---- Accordion ---- */
+    const accTriggers = document.querySelectorAll(".guide-acc-trigger");
+    accTriggers.forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+            const body = trigger.nextElementSibling;
+            const isOpen = trigger.classList.contains("open");
+
+            // collapse all in the same accordion
+            const accordion = trigger.closest(".guide-accordion");
+            accordion.querySelectorAll(".guide-acc-trigger").forEach((t) => {
+                t.classList.remove("open");
+                const b = t.nextElementSibling;
+                if (b) b.classList.remove("open");
+            });
+
+            // open clicked one if it was closed
+            if (!isOpen) {
+                trigger.classList.add("open");
+                if (body) body.classList.add("open");
+            }
+        });
+    });
+})();
+
+/* ==========================================================================
+   WHY ATTEND SECTION — ENTRANCE ANIMATIONS + CARD TILT + GLOW
+   ========================================================================== */
 (function initWhySection() {
     /* 1. ENTRANCE ANIMATIONS (IntersectionObserver) */
     const whyAnims = document.querySelectorAll(".why-anim");
