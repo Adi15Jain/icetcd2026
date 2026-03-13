@@ -1612,6 +1612,175 @@ h6 {
     }
 }
 
+/* ── Resource Persons sub-section ── */
+.speaker-sub-label {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-family: "Outfit", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.55);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.8rem;
+}
+.speaker-sub-label i {
+    color: #ffca28;
+    font-size: 0.9rem;
+}
+
+/* Grid */
+.rp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+/* Individual card */
+.rp-card {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.1rem;
+    padding: 1.5rem 1.6rem;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow:
+        0 4px 24px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    transition:
+        transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        box-shadow 0.4s var(--ease-premium),
+        border-color 0.4s var(--ease-premium),
+        background 0.4s var(--ease-premium);
+    will-change: transform;
+}
+.rp-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 202, 40, 0.35);
+    box-shadow:
+        0 20px 48px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 202, 40, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Cursor glow */
+.rp-card-glow {
+    --glow-x: 50%;
+    --glow-y: 50%;
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+        400px circle at var(--glow-x) var(--glow-y),
+        rgba(255, 202, 40, 0.12),
+        transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.4s var(--ease-premium);
+    pointer-events: none;
+    z-index: 0;
+}
+.rp-card:hover .rp-card-glow {
+    opacity: 1;
+}
+
+/* Avatar icon */
+.rp-avatar {
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #ffca28, #ff8f00);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.15rem;
+    box-shadow: 0 4px 14px rgba(255, 143, 0, 0.4);
+    transition:
+        transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        box-shadow 0.4s var(--ease-premium);
+}
+.rp-card:hover .rp-avatar {
+    transform: scale(1.15) rotate(8deg);
+    box-shadow: 0 8px 24px rgba(255, 143, 0, 0.55);
+}
+
+/* Text info */
+.rp-info {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+.rp-name {
+    font-family: "Outfit", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    line-height: 1.3;
+    transition: color 0.3s ease;
+}
+.rp-card:hover .rp-name {
+    color: #ffca28;
+}
+.rp-role {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.45rem;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #ffca28;
+    line-height: 1.4;
+}
+.rp-role i {
+    margin-top: 2px;
+    flex-shrink: 0;
+    font-size: 0.72rem;
+}
+.rp-affiliation {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.45rem;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.58);
+    line-height: 1.45;
+}
+.rp-affiliation i {
+    margin-top: 2px;
+    flex-shrink: 0;
+    font-size: 0.7rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .rp-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .rp-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .rp-card {
+        padding: 1.2rem 1.3rem;
+    }
+}
+
 /* ========== WHY ATTEND — PREMIUM LIGHT SECTION ========== */
 
 /* --- Full-bleed section with warm light gradient --- */
@@ -3810,6 +3979,111 @@ h6 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
+}
+
+/* Sub-committee group grid */
+.comm-subcomm-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+.comm-subcomm-card {
+    position: relative;
+    padding: 1.6rem 1.8rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 4px 16px rgba(255, 149, 0, 0.05);
+    overflow: hidden;
+    transition:
+        transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        box-shadow 0.4s var(--ease-premium),
+        border-color 0.4s var(--ease-premium),
+        background 0.4s var(--ease-premium);
+    will-change: transform;
+}
+.comm-subcomm-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+        0 20px 40px rgba(255, 149, 0, 0.15),
+        0 8px 16px rgba(255, 106, 0, 0.1);
+    border-color: rgba(255, 149, 0, 0.4);
+    background: rgba(255, 255, 255, 0.75);
+}
+.comm-subcomm-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: "Outfit", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid rgba(255, 149, 0, 0.2);
+    transition: color 0.3s ease;
+}
+.comm-subcomm-card:hover .comm-subcomm-title {
+    color: #ff8f00;
+}
+.comm-subcomm-title i {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, #ffca28, #ff8f00);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(255, 143, 0, 0.3);
+    transition:
+        transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        box-shadow 0.3s ease;
+}
+.comm-subcomm-card:hover .comm-subcomm-title i {
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 0 6px 16px rgba(255, 143, 0, 0.45);
+}
+.comm-subcomm-members {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+.comm-subcomm-members li {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    padding-left: 1rem;
+    position: relative;
+}
+.comm-subcomm-members li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffca28, #ff8f00);
+}
+
+@media (max-width: 900px) {
+    .comm-subcomm-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 540px) {
+    .comm-subcomm-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Core compact cards */

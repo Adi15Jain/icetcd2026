@@ -670,6 +670,23 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
             card.style.transform = "";
         });
     });
+
+    /* 3. RESOURCE PERSON CARD — GLOW FOLLOW */
+    const rpCards = document.querySelectorAll(".rp-card");
+    rpCards.forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const glow = card.querySelector(".rp-card-glow");
+            if (glow) {
+                const percX = ((x / rect.width) * 100).toFixed(1);
+                const percY = ((y / rect.height) * 100).toFixed(1);
+                glow.style.setProperty("--glow-x", percX + "%");
+                glow.style.setProperty("--glow-y", percY + "%");
+            }
+        });
+    });
 })();
 
 /* ==========================================================================
