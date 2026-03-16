@@ -671,7 +671,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         });
     });
 
-    /* 3. RESOURCE PERSON CARD — GLOW FOLLOW */
+    /* 3. RESOURCE PERSON CARD — CURSOR GLOW FOLLOW */
     const rpCards = document.querySelectorAll(".rp-card");
     rpCards.forEach((card) => {
         card.addEventListener("mousemove", (e) => {
@@ -685,6 +685,24 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
                 glow.style.setProperty("--glow-x", percX + "%");
                 glow.style.setProperty("--glow-y", percY + "%");
             }
+        });
+    });
+
+    /* 4. RESOURCE PERSON CARD — 3D TILT */
+    const rpTiltCards = document.querySelectorAll("[data-tilt-rp]");
+    rpTiltCards.forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateY = ((x - centerX) / centerX) * 5;
+            const rotateX = ((centerY - y) / centerY) * 4;
+            card.style.transform = `perspective(700px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.03)`;
+        });
+        card.addEventListener("mouseleave", () => {
+            card.style.transform = "";
         });
     });
 })();

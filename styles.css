@@ -1641,23 +1641,25 @@ h6 {
 .rp-card {
     position: relative;
     display: flex;
-    align-items: flex-start;
-    gap: 1.1rem;
-    padding: 1.5rem 1.6rem;
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.07);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+    padding: 2rem 1.6rem 1.6rem;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px) saturate(1.25);
+    -webkit-backdrop-filter: blur(20px) saturate(1.25);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow:
-        0 4px 24px rgba(0, 0, 0, 0.18),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        0 6px 28px rgba(0, 0, 0, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.09);
     overflow: hidden;
     transition:
-        transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-        box-shadow 0.4s var(--ease-premium),
-        border-color 0.4s var(--ease-premium),
-        background 0.4s var(--ease-premium);
+        transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        box-shadow 0.45s var(--ease-premium),
+        border-color 0.45s var(--ease-premium),
+        background 0.45s var(--ease-premium);
     will-change: transform;
 }
 .rp-card:hover {
@@ -1691,28 +1693,118 @@ h6 {
     opacity: 1;
 }
 
-/* Avatar icon */
-.rp-avatar {
+/* ── Photo portrait ── */
+.rp-photo-wrap {
     position: relative;
-    z-index: 1;
     flex-shrink: 0;
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-    background: linear-gradient(135deg, #ffca28, #ff8f00);
+    width: 130px;
+    height: 130px;
+    z-index: 1;
+    transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.rp-card:hover .rp-photo-wrap {
+    transform: scale(1.07);
+}
+
+/* Spinning conic ring */
+.rp-photo-ring {
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        #ffca28,
+        #ff7900,
+        rgba(160, 68, 255, 0.55),
+        #ffca28
+    );
+    animation: spin 6s linear infinite;
+    z-index: 0;
+}
+.rp-photo-ring::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 50%;
+    background: #0d1530;
+}
+
+/* Photo circle */
+.rp-photo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(255, 202, 40, 0.18);
+}
+.rp-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 50%;
+    display: block;
+}
+
+/* Initials-avatar fallback (for panelists without a photo) */
+.rp-photo--initials {
+    background: linear-gradient(
+        135deg,
+        var(--initials-color-a, #ff7900) 0%,
+        var(--initials-color-b, #ffca28) 100%
+    );
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
-    font-size: 1.15rem;
-    box-shadow: 0 4px 14px rgba(255, 143, 0, 0.4);
-    transition:
-        transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-        box-shadow 0.4s var(--ease-premium);
 }
-.rp-card:hover .rp-avatar {
-    transform: scale(1.15) rotate(8deg);
-    box-shadow: 0 8px 24px rgba(255, 143, 0, 0.55);
+.rp-initials {
+    font-family: "Outfit", sans-serif;
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.95);
+    letter-spacing: -0.5px;
+    line-height: 1;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    user-select: none;
+}
+
+/* Panelist grid — 4 cols on desktop so 7 cards fill as 4+3 */
+.panelist-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.4rem;
+}
+@media (max-width: 1100px) {
+    .panelist-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 720px) {
+    .panelist-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+@media (max-width: 400px) {
+    .panelist-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Pulse glow behind photo */
+.rp-photo-wrap::after {
+    content: "";
+    position: absolute;
+    inset: -14px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(255, 202, 40, 0.2) 0%,
+        transparent 70%
+    );
+    animation: speakerPulse 3.5s ease-in-out infinite;
+    z-index: -1;
 }
 
 /* Text info */
@@ -1721,11 +1813,13 @@ h6 {
     z-index: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
+    align-items: center;
+    gap: 0.38rem;
+    width: 100%;
 }
 .rp-name {
     font-family: "Outfit", sans-serif;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: #fff;
     margin: 0;
@@ -1738,46 +1832,72 @@ h6 {
 .rp-role {
     display: flex;
     align-items: flex-start;
-    gap: 0.45rem;
+    justify-content: center;
+    gap: 0.4rem;
     font-family: "Space Grotesk", sans-serif;
     font-size: 0.8rem;
     font-weight: 600;
     color: #ffca28;
     line-height: 1.4;
+    text-align: center;
 }
 .rp-role i {
-    margin-top: 2px;
     flex-shrink: 0;
     font-size: 0.72rem;
+    margin-top: 2px;
 }
 .rp-affiliation {
     display: flex;
     align-items: flex-start;
-    gap: 0.45rem;
+    justify-content: center;
+    gap: 0.4rem;
     font-family: "Space Grotesk", sans-serif;
-    font-size: 0.78rem;
-    color: rgba(255, 255, 255, 0.58);
+    font-size: 0.74rem;
+    color: rgba(255, 255, 255, 0.52);
     line-height: 1.45;
+    text-align: center;
 }
 .rp-affiliation i {
     margin-top: 2px;
     flex-shrink: 0;
-    font-size: 0.7rem;
+    font-size: 0.66rem;
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
     .rp-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1.4rem;
+    }
+    .rp-photo-wrap {
+        width: 120px;
+        height: 120px;
     }
 }
 @media (max-width: 600px) {
     .rp-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
     }
     .rp-card {
-        padding: 1.2rem 1.3rem;
+        padding: 1.5rem 1rem 1.2rem;
+    }
+    .rp-photo-wrap {
+        width: 100px;
+        height: 100px;
+    }
+    .rp-name {
+        font-size: 0.95rem;
+    }
+}
+@media (max-width: 400px) {
+    .rp-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .rp-photo-wrap {
+        width: 110px;
+        height: 110px;
     }
 }
 
